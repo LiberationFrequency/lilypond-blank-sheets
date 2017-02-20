@@ -4,6 +4,7 @@
 #(ly:set-option 'point-and-click #f)
 
 \header {
+  title="" % blank staves
   tagline = ""  % removed lilypond footer
 } 
 

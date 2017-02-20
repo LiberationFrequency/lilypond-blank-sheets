@@ -4,7 +4,7 @@
 #(ly:set-option 'point-and-click #f)
 
 \header { 
-  title="" % 5 String Bass
+  title="" % five string tabs
   tagline = ""  % removed lilypond footer
 }
 \paper {
@@ -23,7 +23,7 @@
 }
 
 emptymusic = {
-  \repeat unfold 14 { s1\break }
+  \repeat unfold 16 { s1\break }
 }
 
 \new Score \with {
@@ -33,7 +33,7 @@ emptymusic = {
 <<
   \new TabStaff \with {
     \clef moderntab 
-    stringTunings = #bass-tuning 
+    stringTunings = #bass-five-string-tuning 
   } 
   \new TabVoice { \emptymusic }
 >>
