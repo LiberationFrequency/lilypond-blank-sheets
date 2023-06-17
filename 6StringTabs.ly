@@ -9,7 +9,6 @@
 }
 \paper {
   ragged-last-bottom = ##f
-  line-width = 7.5\in
 %  left-margin = 0.5\in
   bottom-margin = 0.25\in
   top-margin = 0.25\in
