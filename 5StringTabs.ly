@@ -20,8 +20,14 @@
   }
 }
 
+#(define Staves 0)
+#(if (string-suffix? "landscape" (ly:get-option 'paper-size))
+  (set! Staves 10)
+  (set! Staves 16)
+  )
+
 emptymusic = {
-  \repeat unfold 16 { s1\break }
+  \repeat unfold \Staves { s1\break }
 }
 
 \new Score \with {

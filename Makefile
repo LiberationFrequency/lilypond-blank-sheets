@@ -1,9 +1,10 @@
-PDFS := $(patsubst %.ly, %.pdf, $(wildcard *.ly))
+PAPER ?= a4  # a4landscape
+PDFS  := $(patsubst %.ly, %.pdf, $(wildcard *.ly))
 
 all: $(PDFS)
 
 %.pdf : %.ly;
-	lilypond --output $(basename $@) $<
+	lilypond --define=paper-size='"$(PAPER)"' --output $(basename $@) $<
 
 clean:
 	-rm -f $(PDFS)

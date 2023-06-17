@@ -15,9 +15,15 @@
   top-margin = 0.25\in
 }
 
+#(define Staves 0)
+#(if (string-suffix? "landscape" (ly:get-option 'paper-size))
+  (set! Staves  9)
+  (set! Staves 12)
+  )
+
 \score {
   {
-    \repeat unfold 12 { s1 \break }
+    \repeat unfold \Staves { s1 \break }
   }
   \layout {
     indent = 0\in
