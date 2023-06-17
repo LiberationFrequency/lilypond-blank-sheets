@@ -8,9 +8,7 @@
   tagline = ""  % removed lilypond footer
 }
 \paper {
-  #(set-default-paper-size "a4")
   ragged-last-bottom = ##f
-  line-width = 7.5\in
 %  left-margin = 0.5\in
   bottom-margin = 0.25\in
   top-margin = 0.25\in
@@ -22,8 +20,14 @@
   }
 }
 
+#(define Staves 0)
+#(if (string-suffix? "landscape" (ly:get-option 'paper-size))
+  (set! Staves 12)
+  (set! Staves 20)
+  )
+
 emptymusic = {
-  \repeat unfold 20 { s1\break }
+  \repeat unfold \Staves { s1\break }
 }
 
 \new Score \with {
